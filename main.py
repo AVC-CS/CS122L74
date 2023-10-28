@@ -5,7 +5,8 @@ def getInput():
     Code Your Program here
     ########################################
     """
-
+    numbers = list(map(int, input('Enter your input values: ').split())) 
+    return numbers
 
 def listSum(list1, list2):
     """
@@ -13,6 +14,9 @@ def listSum(list1, list2):
     Code Your Program here
     ########################################
     """
+    result = []
+    
+    return result
 
 
 def main():
