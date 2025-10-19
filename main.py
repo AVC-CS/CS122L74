@@ -15,7 +15,7 @@ def listSum(list1, list2):
     ########################################
     """
     result = []
-    
+    result = list(map(lambda x, y: x + y, list1, list2)) 
     return result
 
 

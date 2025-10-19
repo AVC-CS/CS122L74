@@ -2,11 +2,11 @@ import main
 import io
 import sys
 import re
-
+import pytest
 
 sumtwo = lambda x: x[0] + x[1]
 
-
+@pytest.mark.basic
 def test_main_0():
     captureOut = io.StringIO()
     sys.stdout = captureOut
@@ -31,6 +31,7 @@ def test_main_0():
     assert ret == target
 
 
+@pytest.mark.edge
 def test_main_1():
     captureOut = io.StringIO()
     sys.stdout = captureOut
@@ -48,6 +49,16 @@ def test_main_1():
     print(f'The inpust list 1:\t {list1}')
     print(f'The inpust list 2:\t {list2}')
 
+    ret = main.listSum(list1, list2)
+    print(f'Your retrun value is:\t {ret}')
+    target = list(map(sumtwo, tuple(zip(list1, list2))))
+    print(f'The result must be \t{target}')
+    assert ret == target
+
+@pytest.mark.bonus
+def test_main_2():
+    list1 = [10] 
+    list2 = [20] 
     ret = main.listSum(list1, list2)
     print(f'Your retrun value is:\t {ret}')
     target = list(map(sumtwo, tuple(zip(list1, list2))))
